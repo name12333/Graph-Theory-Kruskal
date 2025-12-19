@@ -22,7 +22,7 @@ make
 if [ $? -eq 0 ]; then
     echo "编译成功！"
     echo "运行程序..."
-    ./GraphTheory
+    ./attack_mst
 else
     echo "编译失败！请检查代码。"
     exit 1
@@ -32,4 +32,4 @@ fi
 cd ..
 
 echo "构建完成！"
-echo "请在浏览器中打开 web/visualize_new.html 查看可视化效果"
+echo "请在浏览器中打开 web/visualize.html 查看可视化效果"

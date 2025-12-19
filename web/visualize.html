@@ -271,11 +271,11 @@
         // 加载数据
         function loadData() {
             // 加载图数据
-            d3.json("before_graph.json").then(function(data) {
+            d3.json("graph.json").then(function(data) {
                 graphData = data;
 
                 // 加载过程数据
-                d3.json("before_process.json").then(function(steps) {
+                d3.json("process.json").then(function(steps) {
                     processSteps = steps;
 
                     // 初始化可视化
@@ -366,8 +366,7 @@
                 .data(links)
                 .enter().append("line")
                 .attr("class", "edge")
-                .attr("id", d => `edge-${d.id}`)
-                .attr("marker-end", "url(#arrowhead)");
+                .attr("id", d => `edge-${d.id}`);
 
             // 创建边标签
             const linkLabel = linkGroup.selectAll(".edge-label")
@@ -572,9 +571,13 @@
 
             // 延迟后选择边
             setTimeout(() => {
-                // 选择边
-                d3.select(`#edge-${actualEdgeId}`).classed("considering", false).classed("selected", true);
-                selectedEdges.add(actualEdgeId);
+                // 只有当边被选中时才标记为selected
+                if (step.selected) {
+                    d3.select(`#edge-${actualEdgeId}`).classed("considering", false).classed("selected", true);
+                    selectedEdges.add(actualEdgeId);
+                } else {
+                    d3.select(`#edge-${actualEdgeId}`).classed("considering", false);
+                }
 
                 // 更新当前步骤
                 currentStepIndex++;
