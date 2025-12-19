@@ -1,0 +1,3 @@
+/home/ubuntu/vs_workspace/Graph Theory/build/CMakeFiles/attack_mst.dir
+/home/ubuntu/vs_workspace/Graph Theory/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/vs_workspace/Graph Theory/build/CMakeFiles/rebuild_cache.dir
