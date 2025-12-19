@@ -34,8 +34,7 @@ Graph Theory/
 │   ├── Kruskal.cpp         # Kruskal算法实现
 │   ├── Logger.cpp          # 日志实现
 │   ├── UnionFind.cpp       # 并查集实现
-│   ├── main.cpp            # 主程序
-│   └── main_new.cpp        # 新版主程序
+│   └── main.cpp            # 主程序
 └── web/                    # 可视化相关文件
     ├── visualize.html      # 可视化界面
     ├── graph.json          # 图数据
